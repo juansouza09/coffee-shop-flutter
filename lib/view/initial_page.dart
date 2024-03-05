@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:coffee_shop_flutter/view/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -88,6 +89,13 @@ class _InitialPageState extends State<InitialPage> {
               height: 32,
             ),
             InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ));
+              },
               child: Container(
                 width: MediaQuery.of(context).size.width * .8,
                 height: MediaQuery.of(context).size.height * .06,
