@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -64,14 +63,33 @@ class CoffeeGrid extends StatelessWidget {
           childAspectRatio: MediaQuery.of(context).size.aspectRatio),
       itemCount: 2,
       itemBuilder: (context, index) {
-        return const CoffeeCard();
+        return const CoffeeCard(
+          title: 'Cappucino',
+          subtitle: 'with Chocolate',
+          avaliation: '4.8',
+          price: '5.85',
+          url:
+              'https://upload.wikimedia.org/wikipedia/commons/c/c8/Cappuccino_at_Sightglass_Coffee.jpg',
+        );
       },
     );
   }
 }
 
 class CoffeeCard extends StatelessWidget {
-  const CoffeeCard({super.key});
+  const CoffeeCard(
+      {super.key,
+      required this.title,
+      required this.subtitle,
+      required this.avaliation,
+      required this.url,
+      required this.price});
+
+  final String title;
+  final String subtitle;
+  final String avaliation;
+  final String url;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +103,7 @@ class CoffeeCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Image.network(
-                  'https://upload.wikimedia.org/wikipedia/commons/c/c8/Cappuccino_at_Sightglass_Coffee.jpg',
+                  url,
                   height: 138,
                   width: MediaQuery.of(context).size.width * .4,
                   fit: BoxFit.cover,
@@ -115,9 +133,12 @@ class CoffeeCard extends StatelessWidget {
                       const SizedBox(
                         width: 4,
                       ),
-                      const Text(
-                        '4.8',
-                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      Text(
+                        avaliation,
+                        style: GoogleFonts.sora(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white),
                       ),
                     ],
                   ),
@@ -133,19 +154,24 @@ class CoffeeCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const Text('Cappuccino',
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                Text('with Chocolate',
-                    style: TextStyle(fontSize: 16, color: Colors.grey[600])),
+                Text(title,
+                    style: GoogleFonts.sora(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF2F2D2C))),
+                Text(subtitle,
+                    style: GoogleFonts.sora(
+                        fontSize: 14, color: const Color(0xFF9B9B9B))),
                 const SizedBox(height: 10),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('\$4.53',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
-                    PlusButton(),
+                    Text('\$ $price',
+                        style: GoogleFonts.sora(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF2F4B4E))),
+                    const PlusButton(),
                   ],
                 ),
               ],
