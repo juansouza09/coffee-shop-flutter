@@ -6,44 +6,42 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('West, Balurghat'),
-          bottom: const TabBar(
-            tabs: [
-              Tab(text: 'Cappuccino'),
-              Tab(text: 'Macchiato'),
-              Tab(text: 'Latte'),
-              Tab(text: 'Americano'),
-            ],
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [Color(0xFF131313), Color(0xFF313131)])),
+            child: Center(
+              child: Row(
+                children: [
+                  const Column(
+                    children: [Text('Location'), Text('São Paulo, Brazil')],
+                  ),
+                  Image.asset('person')
+                ],
+              ),
+            ),
           ),
-        ),
-        body: const TabBarView(
-          children: [
-            CoffeeGrid(),
-            CoffeeGrid(),
-            CoffeeGrid(),
-            CoffeeGrid(),
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Favorites',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-        ),
+          Container(color: Colors.white, child: const CoffeeGrid()),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
       ),
     );
   }
