@@ -6,42 +6,87 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [Color(0xFF131313), Color(0xFF313131)])),
-            child: Center(
-              child: Row(
-                children: [
-                  const Column(
-                    children: [Text('Location'), Text('São Paulo, Brazil')],
-                  ),
-                  Image.asset('person')
-                ],
-              ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height * .15,
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      transform: GradientRotation(-35),
+                      colors: [Color(0xFF131313), Color(0xFF313131)])),
+              child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Location',
+                                style: GoogleFonts.sora(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: const Color(0xFFB7B7B7)),
+                              ),
+                              const SizedBox(width: 8),
+                              Row(
+                                children: [
+                                  Text(
+                                    'São Paulo, Brazil',
+                                    style: GoogleFonts.sora(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w700,
+                                        color: const Color(0xFFDDDDDD)),
+                                  ),
+                                  const SizedBox(
+                                    width: 4,
+                                  ),
+                                  const Icon(
+                                    Icons.keyboard_arrow_down,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Container(
+                            width: 38,
+                            height: 38,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
+                    ],
+                  )),
             ),
-          ),
-          Container(color: Colors.white, child: const CoffeeGrid()),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
+            const Expanded(
+              child: CoffeeGrid(),
+            ),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite),
+              label: 'Favorites',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -57,9 +102,8 @@ class CoffeeGrid extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
-          mainAxisSpacing: 90,
-          childAspectRatio: MediaQuery.of(context).size.aspectRatio),
-      itemCount: 2,
+          childAspectRatio: MediaQuery.of(context).size.aspectRatio + 0.2),
+      itemCount: 8,
       itemBuilder: (context, index) {
         return const CoffeeCard(
           title: 'Cappucino',
