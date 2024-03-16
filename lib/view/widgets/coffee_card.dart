@@ -7,13 +7,11 @@ class CoffeeCard extends StatelessWidget {
       required this.title,
       required this.subtitle,
       required this.avaliation,
-      required this.url,
       required this.price});
 
   final String title;
   final String subtitle;
   final String avaliation;
-  final String url;
   final String price;
 
   @override
@@ -27,8 +25,8 @@ class CoffeeCard extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
-                child: Image.network(
-                  url,
+                child: Image.asset(
+                  'assets/images/cappuccino-img.jpg',
                   height: 138,
                   width: MediaQuery.of(context).size.width * .4,
                   fit: BoxFit.cover,

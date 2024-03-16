@@ -19,9 +19,7 @@ class CoffeeGrid extends StatelessWidget {
           title: 'Cappucino',
           subtitle: 'with Chocolate',
           avaliation: '4.8',
-          price: '5.85',
-          url:
-              'https://upload.wikimedia.org/wikipedia/commons/c/c8/Cappuccino_at_Sightglass_Coffee.jpg',
+          price: '5.85'
         );
       },
     );
