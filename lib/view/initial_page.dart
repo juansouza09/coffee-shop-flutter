@@ -35,14 +35,15 @@ class _InitialPageState extends State<InitialPage> {
       backgroundColor: const Color(0xFF38241D),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const SizedBox(
-              height: 80,
+              height: 20,
             ),
             CarouselSlider(
               items: imageSliders,
               options: CarouselOptions(
-                  height: MediaQuery.of(context).size.height * .7,
+                  height: MediaQuery.of(context).size.height * .8,
                   autoPlay: true,
                   aspectRatio: MediaQuery.of(context).size.aspectRatio,
                   enlargeCenterPage: true,
