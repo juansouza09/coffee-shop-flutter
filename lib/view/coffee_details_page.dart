@@ -13,6 +13,8 @@ class CoffeeDetailsPage extends StatefulWidget {
 
 class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
   bool isFavorited = false;
+  String selectedSize = 'M';
+  final List<String> sizes = ['S', 'M', 'L'];
 
   @override
   Widget build(BuildContext context) {
@@ -103,47 +105,39 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                 ],
               )),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 8,
-                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.coffee.title,
-                          style: GoogleFonts.sora(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black),
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          widget.coffee.subtitle,
-                          style: GoogleFonts.sora(
-                              fontSize: 14,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.coffee.title,
+                            style: GoogleFonts.sora(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black),
+                          ),
+                          Text(
+                            widget.coffee.subtitle,
+                            style: GoogleFonts.sora(
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
                     ),
-                    const Spacer(),
                     Row(
                       children: [
-                        const Icon(
-                          Icons.star,
-                          color: Color(0xFFE27D19),
-                          size: 24,
-                        ),
-                        const SizedBox(
-                          width: 4,
-                        ),
+                        const Icon(Icons.star,
+                            color: Color(0xFFE27D19), size: 24),
+                        const SizedBox(width: 4),
                         Text(
                           widget.coffee.avaliation,
                           style: GoogleFonts.sora(
@@ -151,9 +145,7 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                               fontWeight: FontWeight.w600,
                               color: Colors.black),
                         ),
-                        const SizedBox(
-                          width: 8,
-                        ),
+                        const SizedBox(width: 8),
                         Text(
                           widget.coffee.avaliationSize,
                           style: GoogleFonts.sora(
@@ -165,43 +157,104 @@ class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 8,
+                const SizedBox(height: 16),
+                Text(
+                  'Description',
+                  style: GoogleFonts.sora(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black),
                 ),
-                const Divider(
-                  color: Color(0xFFEAEAEA),
+                Text(
+                  widget.coffee.description,
+                  style: GoogleFonts.sora(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black),
                 ),
-                const SizedBox(
-                  height: 8,
+                const SizedBox(height: 16),
+                Text(
+                  'Size',
+                  style: GoogleFonts.sora(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                ToggleButtons(
+                  borderColor: Colors.transparent,
+                  fillColor: const Color(0xFFE27D19),
+                  borderWidth: 2,
+                  selectedBorderColor: Colors.transparent,
+                  selectedColor: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  onPressed: (int index) {
+                    setState(() {
+                      selectedSize = sizes[index];
+                    });
+                  },
+                  isSelected:
+                      sizes.map((size) => size == selectedSize).toList(),
+                  children: sizes
+                      .map((size) => Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text(
+                              size,
+                              style: GoogleFonts.sora(),
+                            ),
+                          ))
+                      .toList(),
+                ),
+                const SizedBox(height: 32),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      'Description',
-                      style: GoogleFonts.sora(
-                          fontSize: 22,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Price',
+                          style: GoogleFonts.sora(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: const Color(0xFF9B9B9B),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          '\$ ${widget.coffee.price}',
+                          style: GoogleFonts.sora(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: const Color(0xFFE27D19),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width * .55,
+                      height: MediaQuery.of(context).size.height * .07,
+                      decoration: const BoxDecoration(
+                          color: Color(0xFFE27D19),
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
+                      child: Text(
+                        'Buy Now',
+                        style: GoogleFonts.sora(
+                          color: Colors.white,
+                          fontSize: 18,
                           fontWeight: FontWeight.w600,
-                          color: Colors.black),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      widget.coffee.description,
-                      style: GoogleFonts.sora(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black),
+                        ),
+                      ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 8,
-                ),
               ],
             ),
-          )
+          ),
         ],
       )),
     );
