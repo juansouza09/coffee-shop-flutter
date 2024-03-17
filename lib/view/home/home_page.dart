@@ -18,9 +18,14 @@ class _HomePageState extends State<HomePage>
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      for (var coffee in coffees) {
+        precacheImage(NetworkImage(coffee.imageUrl), context);
+      }
+    });
   }
 
-  List<CoffeeModel> coffes = [
+  List<CoffeeModel> coffees = [
     CoffeeModel(
         id: 1,
         title: 'Cappuccino',
@@ -123,16 +128,16 @@ class _HomePageState extends State<HomePage>
               controller: _tabController,
               children: [
                 CoffeeGrid(
-                  coffees: coffes,
+                  coffees: coffees,
                 ),
                 CoffeeGrid(
-                  coffees: coffes,
+                  coffees: coffees,
                 ),
                 CoffeeGrid(
-                  coffees: coffes,
+                  coffees: coffees,
                 ),
                 CoffeeGrid(
-                  coffees: coffes,
+                  coffees: coffees,
                 ),
               ],
             ),

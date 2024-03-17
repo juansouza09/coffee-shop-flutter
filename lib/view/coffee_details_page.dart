@@ -1,11 +1,18 @@
 import 'package:coffee_shop_flutter/view/home/widgets/coffee_grid.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CoffeeDetailsPage extends StatelessWidget {
-  const CoffeeDetailsPage({super.key, required this.coffee});
+class CoffeeDetailsPage extends StatefulWidget {
   final CoffeeModel coffee;
+
+  const CoffeeDetailsPage({super.key, required this.coffee});
+
+  @override
+  State<CoffeeDetailsPage> createState() => _CoffeeDetailsPageState();
+}
+
+class _CoffeeDetailsPageState extends State<CoffeeDetailsPage> {
+  bool isFavorited = false;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +21,7 @@ class CoffeeDetailsPage extends StatelessWidget {
           child: Column(
         children: [
           Hero(
-              tag: coffee.id,
+              tag: widget.coffee.id,
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
@@ -38,7 +45,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                         bottomRight: Radius.circular(8),
                       ),
                       child: Image.network(
-                        coffee.imageUrl,
+                        widget.coffee.imageUrl,
                         fit: BoxFit.cover,
                         height: MediaQuery.of(context).size.height * .5,
                         width: MediaQuery.of(context).size.width,
@@ -70,13 +77,24 @@ class CoffeeDetailsPage extends StatelessWidget {
                         children: [
                           IconButton(
                             icon: const Icon(Icons.arrow_back_ios,
-                                color: Colors.black),
+                                color: Colors.white),
                             onPressed: () => Navigator.pop(context),
                           ),
                           IconButton(
-                            icon: const Icon(Icons.favorite_outline,
-                                color: Colors.black),
-                            onPressed: () {},
+                            icon: isFavorited
+                                ? const Icon(
+                                    Icons.favorite,
+                                    color: Colors.pink,
+                                  )
+                                : const Icon(
+                                    Icons.favorite_outline,
+                                    color: Colors.white,
+                                  ),
+                            onPressed: () {
+                              setState(() {
+                                isFavorited = !isFavorited;
+                              });
+                            },
                           ),
                         ],
                       ),
@@ -97,7 +115,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          coffee.title,
+                          widget.coffee.title,
                           style: GoogleFonts.sora(
                               fontSize: 22,
                               fontWeight: FontWeight.w600,
@@ -107,7 +125,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                           height: 4,
                         ),
                         Text(
-                          coffee.subtitle,
+                          widget.coffee.subtitle,
                           style: GoogleFonts.sora(
                               fontSize: 14,
                               color: Colors.black,
@@ -127,7 +145,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                           width: 4,
                         ),
                         Text(
-                          coffee.avaliation,
+                          widget.coffee.avaliation,
                           style: GoogleFonts.sora(
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
@@ -137,7 +155,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                           width: 8,
                         ),
                         Text(
-                          coffee.avaliationSize,
+                          widget.coffee.avaliationSize,
                           style: GoogleFonts.sora(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
@@ -170,7 +188,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                       height: 8,
                     ),
                     Text(
-                      coffee.description,
+                      widget.coffee.description,
                       style: GoogleFonts.sora(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,

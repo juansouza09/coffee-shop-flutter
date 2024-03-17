@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Widget buildSearchBar({required double searchBarHeight}) {
@@ -39,8 +38,8 @@ Widget buildSearchBar({required double searchBarHeight}) {
             child: Padding(
               padding:
                   const EdgeInsets.only(top: 10, bottom: 2, left: 8, right: 8),
-              child: SvgPicture.asset(
-                'assets/images/filter-icon.svg',
+              child: Image.asset(
+                'assets/images/filter-icon.png',
               ),
             ),
           ),

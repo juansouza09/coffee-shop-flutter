@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:coffee_shop_flutter/view/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class InitialPage extends StatefulWidget {
   const InitialPage({super.key});
@@ -91,11 +92,12 @@ class _InitialPageState extends State<InitialPage> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomePage(),
-                    ));
+                    PageTransition(
+                        child: const HomePage(),
+                        duration: const Duration(milliseconds: 300),
+                        type: PageTransitionType.rightToLeft));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width * .8,
