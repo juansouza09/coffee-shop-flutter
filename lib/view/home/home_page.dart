@@ -22,35 +22,59 @@ class _HomePageState extends State<HomePage>
 
   List<CoffeeModel> coffes = [
     CoffeeModel(
+        id: 1,
         title: 'Cappuccino',
         subtitle: 'with Chocolate',
         avaliation: '4.8',
-        price: '4.53'),
+        avaliationSize: '2.330',
+        price: '4.53',
+        description:
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
     CoffeeModel(
+        id: 2,
         title: 'Cappuccino',
         subtitle: 'with Oat Milk',
         avaliation: '4.9',
-        price: '3.90'),
+        avaliationSize: '1.290',
+        price: '3.90',
+        description:
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
     CoffeeModel(
+        id: 3,
         title: 'Cappuccino',
         subtitle: 'with Chocolate',
         avaliation: '4.5',
-        price: '4.80'),
+        avaliationSize: '451',
+        price: '4.80',
+        description:
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
     CoffeeModel(
+        id: 4,
         title: 'Cappuccino',
         subtitle: 'with Oat Milk',
         avaliation: '4.0',
-        price: '3.53'),
+        avaliationSize: '755',
+        price: '3.53',
+        description:
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
     CoffeeModel(
+        id: 5,
         title: 'Cappuccino',
         subtitle: 'with Chocolate',
         avaliation: '4.8',
-        price: '5.40'),
+        avaliationSize: '2.500',
+        price: '5.40',
+        description:
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
     CoffeeModel(
+        id: 6,
         title: 'Cappuccino',
         subtitle: 'with Oat Milk',
         avaliation: '4.6',
-        price: '4.60'),
+        avaliationSize: '2.330',
+        price: '4.60',
+        description:
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
   ];
 
   @override

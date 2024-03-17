@@ -1,8 +1,10 @@
+import 'package:coffee_shop_flutter/view/home/widgets/coffee_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CoffeeDetailsPage extends StatelessWidget {
-  const CoffeeDetailsPage({super.key});
+  const CoffeeDetailsPage({super.key, required this.coffee});
+  final CoffeeModel coffee;
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +12,14 @@ class CoffeeDetailsPage extends StatelessWidget {
       body: SingleChildScrollView(
           child: Column(
         children: [
-          Image.asset(
-            'assets/images/coffee-image.jpg',
-            fit: BoxFit.cover,
-            height: MediaQuery.of(context).size.height * .5,
-            width: MediaQuery.of(context).size.width,
+          Hero(
+            tag: coffee.id,
+            child: Image.asset(
+              'assets/images/coffee-image.jpg',
+              fit: BoxFit.cover,
+              height: MediaQuery.of(context).size.height * .5,
+              width: MediaQuery.of(context).size.width,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -26,7 +31,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Espresso Coffee',
+                          coffee.title,
                           style: GoogleFonts.sora(
                               fontSize: 22,
                               fontWeight: FontWeight.w600,
@@ -36,7 +41,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                           height: 4,
                         ),
                         Text(
-                          'with Chocolate',
+                          coffee.subtitle,
                           style: GoogleFonts.sora(
                               fontSize: 14,
                               color: Colors.black,
@@ -56,7 +61,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                           width: 4,
                         ),
                         Text(
-                          '4.9',
+                          coffee.avaliation,
                           style: GoogleFonts.sora(
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
@@ -66,7 +71,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                           width: 8,
                         ),
                         Text(
-                          '(2,330)',
+                          coffee.avaliationSize,
                           style: GoogleFonts.sora(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
@@ -99,7 +104,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                       height: 8,
                     ),
                     Text(
-                      'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More',
+                      coffee.description,
                       style: GoogleFonts.sora(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,

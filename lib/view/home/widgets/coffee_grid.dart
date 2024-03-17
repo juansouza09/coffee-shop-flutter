@@ -3,16 +3,22 @@ import 'package:flutter/material.dart';
 import 'coffee_card.dart';
 
 class CoffeeModel {
+  int id;
   String title;
   String subtitle;
   String avaliation;
+  String avaliationSize;
   String price;
+  String description;
 
   CoffeeModel({
+    required this.id,
     required this.title,
     required this.subtitle,
     required this.avaliation,
+    required this.avaliationSize,
     required this.price,
+    required this.description,
   });
 }
 
@@ -32,10 +38,7 @@ class CoffeeGrid extends StatelessWidget {
       itemCount: coffees.length,
       itemBuilder: (context, index) {
         return CoffeeCard(
-          title: coffees[index].title,
-          subtitle: coffees[index].subtitle,
-          avaliation: coffees[index].avaliation,
-          price: coffees[index].price,
+          coffee: coffees[index],
         );
       },
     );
