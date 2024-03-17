@@ -20,6 +20,39 @@ class _HomePageState extends State<HomePage>
     _tabController = TabController(length: 4, vsync: this);
   }
 
+  List<CoffeeModel> coffes = [
+    CoffeeModel(
+        title: 'Cappuccino',
+        subtitle: 'with Chocolate',
+        avaliation: '4.8',
+        price: '4.53'),
+    CoffeeModel(
+        title: 'Cappuccino',
+        subtitle: 'with Oat Milk',
+        avaliation: '4.9',
+        price: '3.90'),
+    CoffeeModel(
+        title: 'Cappuccino',
+        subtitle: 'with Chocolate',
+        avaliation: '4.5',
+        price: '4.80'),
+    CoffeeModel(
+        title: 'Cappuccino',
+        subtitle: 'with Oat Milk',
+        avaliation: '4.0',
+        price: '3.53'),
+    CoffeeModel(
+        title: 'Cappuccino',
+        subtitle: 'with Chocolate',
+        avaliation: '4.8',
+        price: '5.40'),
+    CoffeeModel(
+        title: 'Cappuccino',
+        subtitle: 'with Oat Milk',
+        avaliation: '4.6',
+        price: '4.60'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,11 +85,19 @@ class _HomePageState extends State<HomePage>
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: const [
-                CoffeeGrid(),
-                CoffeeGrid(),
-                CoffeeGrid(),
-                CoffeeGrid(),
+              children: [
+                CoffeeGrid(
+                  coffees: coffes,
+                ),
+                CoffeeGrid(
+                  coffees: coffes,
+                ),
+                CoffeeGrid(
+                  coffees: coffes,
+                ),
+                CoffeeGrid(
+                  coffees: coffes,
+                ),
               ],
             ),
           ),
