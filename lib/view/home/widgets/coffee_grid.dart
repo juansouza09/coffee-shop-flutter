@@ -27,6 +27,7 @@ class CoffeeGrid extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
           childAspectRatio: MediaQuery.of(context).size.aspectRatio + 0.2),
       itemCount: coffees.length,
       itemBuilder: (context, index) {
