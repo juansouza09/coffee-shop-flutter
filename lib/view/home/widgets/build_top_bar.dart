@@ -10,10 +10,13 @@ Widget buildTopBar(BuildContext context) {
     children: [
       Container(
         height: MediaQuery.of(context).size.height * .2,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            transform: GradientRotation(-35),
-            colors: [Color(0xFF131313), Color(0xFF313131)],
+            transform: const GradientRotation(-35),
+            colors: [
+              const Color(0xFF131313),
+              const Color(0xFF313131).withOpacity(0.83)
+            ],
           ),
         ),
         child: Padding(

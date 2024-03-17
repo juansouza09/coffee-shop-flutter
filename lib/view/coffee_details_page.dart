@@ -1,5 +1,6 @@
 import 'package:coffee_shop_flutter/view/home/widgets/coffee_grid.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CoffeeDetailsPage extends StatelessWidget {
@@ -57,7 +58,30 @@ class CoffeeDetailsPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )
+                  ),
+                  Positioned(
+                    top: MediaQuery.of(context).padding.top,
+                    left: 0,
+                    right: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.arrow_back_ios,
+                                color: Colors.black),
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.favorite_outline,
+                                color: Colors.black),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               )),
           Padding(
