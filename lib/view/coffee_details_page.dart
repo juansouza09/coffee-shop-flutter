@@ -13,18 +13,60 @@ class CoffeeDetailsPage extends StatelessWidget {
           child: Column(
         children: [
           Hero(
-            tag: coffee.id,
-            child: Image.asset(
-              'assets/images/coffee-image.jpg',
-              fit: BoxFit.cover,
-              height: MediaQuery.of(context).size.height * .5,
-              width: MediaQuery.of(context).size.width,
-            ),
-          ),
+              tag: coffee.id,
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(16),
+                        bottomRight: Radius.circular(16),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.4),
+                          blurRadius: 8,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(8),
+                        bottomRight: Radius.circular(8),
+                      ),
+                      child: Image.network(
+                        coffee.imageUrl,
+                        fit: BoxFit.cover,
+                        height: MediaQuery.of(context).size.height * .5,
+                        width: MediaQuery.of(context).size.width,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height * .1,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: [
+                          Colors.black.withOpacity(0.6),
+                          Colors.transparent,
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
+                const SizedBox(
+                  height: 8,
+                ),
                 Row(
                   children: [
                     Column(

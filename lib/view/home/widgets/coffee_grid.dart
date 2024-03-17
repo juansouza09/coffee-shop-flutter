@@ -10,6 +10,7 @@ class CoffeeModel {
   String avaliationSize;
   String price;
   String description;
+  String imageUrl;
 
   CoffeeModel({
     required this.id,
@@ -19,6 +20,7 @@ class CoffeeModel {
     required this.avaliationSize,
     required this.price,
     required this.description,
+    required this.imageUrl,
   });
 }
 

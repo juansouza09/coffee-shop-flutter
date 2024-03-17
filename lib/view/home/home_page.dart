@@ -29,7 +29,9 @@ class _HomePageState extends State<HomePage>
         avaliationSize: '2.330',
         price: '4.53',
         description:
-            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More',
+        imageUrl:
+            'https://loucodocafe.com.br/wp-content/uploads/2020/08/cappuccino-1.jpg'),
     CoffeeModel(
         id: 2,
         title: 'Cappuccino',
@@ -38,7 +40,9 @@ class _HomePageState extends State<HomePage>
         avaliationSize: '1.290',
         price: '3.90',
         description:
-            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More',
+        imageUrl:
+            'https://perfectdailygrind.com/pt/wp-content/uploads/sites/5/2021/02/Cappuccino-1-1-e1614286541519.jpg'),
     CoffeeModel(
         id: 3,
         title: 'Cappuccino',
@@ -47,7 +51,9 @@ class _HomePageState extends State<HomePage>
         avaliationSize: '451',
         price: '4.80',
         description:
-            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More',
+        imageUrl:
+            'https://coffeelounge.com.br/wp-content/uploads/2020/06/cappuccino-chocolate-square.jpg'),
     CoffeeModel(
         id: 4,
         title: 'Cappuccino',
@@ -56,7 +62,9 @@ class _HomePageState extends State<HomePage>
         avaliationSize: '755',
         price: '3.53',
         description:
-            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More',
+        imageUrl:
+            'https://static.itdg.com.br/images/auto-auto/40ea2d90b068df7dfb5e98a66ab502cc/cappuccino.jpg'),
     CoffeeModel(
         id: 5,
         title: 'Cappuccino',
@@ -65,7 +73,9 @@ class _HomePageState extends State<HomePage>
         avaliationSize: '2.500',
         price: '5.40',
         description:
-            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More',
+        imageUrl:
+            'https://coffeeaffection.com/wp-content/uploads/2021/02/does-a-cappuccino-have-caffeine.jpg'),
     CoffeeModel(
         id: 6,
         title: 'Cappuccino',
@@ -74,7 +84,9 @@ class _HomePageState extends State<HomePage>
         avaliationSize: '2.330',
         price: '4.60',
         description:
-            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More'),
+            'A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More',
+        imageUrl:
+            'https://uniquecafes.com.br/wp-content/uploads/2022/04/Destaque-Cappuccino.webp'),
   ];
 
   @override

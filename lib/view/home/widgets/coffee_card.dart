@@ -33,8 +33,8 @@ class CoffeeCard extends StatelessWidget {
                   tag: coffee.id,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
-                    child: Image.asset(
-                      'assets/images/cappuccino-img.jpg',
+                    child: Image.network(
+                      coffee.imageUrl,
                       height: 138,
                       width: MediaQuery.of(context).size.width * .4,
                       fit: BoxFit.cover,
