@@ -1,5 +1,7 @@
+import 'package:coffee_shop_flutter/view/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 Widget buildLocationRow(BuildContext context) {
   return Row(
@@ -36,13 +38,22 @@ Widget buildLocationRow(BuildContext context) {
         ],
       ),
       const Spacer(),
-      ClipRRect(
-        borderRadius: BorderRadius.circular(8),
-        child: Image.asset(
-          'assets/images/profile-img.jpeg',
-          width: 48,
-          height: 48,
-          fit: BoxFit.cover,
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context,
+              PageTransition(
+                  child: const ProfilePage(),
+                  type: PageTransitionType.rightToLeft));
+        },
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            'assets/images/profile-img.jpeg',
+            width: 48,
+            height: 48,
+            fit: BoxFit.cover,
+          ),
         ),
       )
     ],
