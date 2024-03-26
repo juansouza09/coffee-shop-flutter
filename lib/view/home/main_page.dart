@@ -1,3 +1,4 @@
+import 'package:coffee_shop_flutter/view/favorite/favorite_page.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
@@ -13,7 +14,7 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    Container(color: Colors.red),
+    const FavoritePage(),
     Container(color: Colors.green),
     Container(color: Colors.blue),
   ];
