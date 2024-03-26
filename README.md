@@ -8,9 +8,17 @@ This repository contains the user interface for a coffee shop application built 
 - Scrollable coffee selection list
 - Detailed coffee information page with hero animation transitions
 - Interactive size selection and 'favorite' feature
+- User Profile Page
 
-![initialpage](https://github.com/juansouza09/coffee-shop-flutter/assets/94875270/8d230fdb-29ec-40e3-abbf-c81ece768be0)
-![homepage](https://github.com/juansouza09/coffee-shop-flutter/assets/94875270/ec210558-b8e6-4c02-baa9-75396ff43c83)
+<p>
+  <img src="https://github.com/juansouza09/coffee-shop-flutter/blob/main/screenshots/initial.PNG" width="30%" />
+  <img src="https://github.com/juansouza09/coffee-shop-flutter/blob/main/screenshots/home.PNG" width="30%" /> 
+  <img src="https://github.com/juansouza09/coffee-shop-flutter/blob/main/screenshots/details.PNG" width="30%" />
+</p>
+<p>
+  <img src="https://github.com/juansouza09/coffee-shop-flutter/blob/main/screenshots/favorite.PNG" width="30%" />
+  <img src="https://github.com/juansouza09/coffee-shop-flutter/blob/main/screenshots/profile.PNG" width="30%" />
+</p>
 
 ## Getting Started
 
