@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:coffee_shop_flutter/view/home/home_page.dart';
+import 'package:coffee_shop_flutter/view/home/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -95,7 +95,7 @@ class _InitialPageState extends State<InitialPage> {
                 Navigator.pushReplacement(
                     context,
                     PageTransition(
-                        child: const HomePage(),
+                        child: const MainPage(),
                         duration: const Duration(milliseconds: 300),
                         type: PageTransitionType.rightToLeft));
               },

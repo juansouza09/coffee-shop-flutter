@@ -1,4 +1,4 @@
-import 'package:coffee_shop_flutter/view/profile_page.dart';
+import 'package:coffee_shop_flutter/view/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';

@@ -1,4 +1,4 @@
-import 'package:coffee_shop_flutter/view/coffee_details_page.dart';
+import 'package:coffee_shop_flutter/view/details/coffee_details_page.dart';
 import 'package:coffee_shop_flutter/view/home/widgets/coffee_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
